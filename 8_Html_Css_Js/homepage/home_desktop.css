@@ -1,0 +1,218 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+@import url('https://fonts.cdnfonts.com/css/beyno');
+
+* {
+  box-sizing: border-box; /* make width = width + padding + border */
+  font-family: 'Roboto Mono', monospace; /* primary and secondary fonts */
+}
+
+@media only screen and (orientation:landscape) {
+
+  :root {
+    --body-min-height: 100%;
+
+    --box-centered-flex-max-width: 66.66%;
+
+    --profile-picture-height: 35vh;
+    --profile-picture-width: calc(var(--profile-picture-height) / 1.5);
+
+    --navbar-max-height: 45vh;
+
+    /* COLOR PALLETS - Black Panther */
+    /* Title SOLID colors */
+    --blue-darkest-hex: #0A172E; /* Maastricht Blue */
+    --blue-dark-hex: #134284; /* Dark Cerulean */
+    --blue-light-hex: #0D66C4; /* Denim */
+    --blue-lightest-hex: #1984F0; /* Dodger Blue */
+    --gold-light-hex: #FFCA36; /* sunglow */
+    --gold-dark-hex: #D69300; /* harvest gold */
+    /* Vibranium SOLID colors */
+    --purple-light-hex: #C4A8FF; /* pale violet */
+    --purple-medium-hex: #664EAE; /* plump purple */
+    --purple-dark-hex: #1A0554; /* russian violet */
+    --black-rich-hex: #0C0B13; /* rich black */
+    /* Vibranium TRANSPARENT colors */
+    --purple-light-rgba: rgba(196, 168, 255, 0.3); /* pale violet - rgba fourth number is transparency */
+    --purple-medium-rgba: rgba(102, 78, 174, 0.3); /* plump purple - rgba fourth number is transparency */
+    --purple-dark-rgba: rgba(26, 5, 84, 0.7); /* russian violet - rgba fourth number is transparency */
+    --black-rich-rgba: rgba(12, 11, 19, 0.1); /* rich black - rgba fourth number is transparency */
+
+
+    /* ITEM COLORS */
+    --space-fabric-bg-color: var(--black-rich-rgba);
+
+    --nav-link-standard-bg-color: var(--purple-dark-rgba);
+    --nav-link-standard-border-color: var(--gold-dark-hex);
+
+    --nav-link-active-bg-color: var(--gold-dark-hex);
+    --nav-link-active-border-color: var(--gold-light-hex);
+  }
+
+  html, body {
+    position: relative; /* Essential for absolute positioning of child */
+    height: var(--body-min-height); /* 100% of viewport height */
+    overflow-x: hidden; /* Hides any horizontal overflow */
+    overflow-y: hidden; /* Hides any vertical overflow */
+    background-image: url("../../images/purple_galaxy.jpg");
+    /* border: 5px solid red; */
+  }
+  p {
+    text-align: center;
+  }
+  h5 {
+    text-align: center;
+    font-family: "beyno";
+  }
+
+    #box-space-fabric {
+      height: var(--body-min-height);
+      background-color: var(--space-fabric-bg-color);
+      display: grid;
+      /* place-items: center; */
+      place-content: start space-evenly;
+      /* border: 5px dotted; */
+    }
+      #box-centered-flex {
+        display:flex;
+        flex-direction: column;
+
+        /* if there is not enough room for the items, they must wrap */
+        flex-wrap: wrap; /* nowrap (default): items must go off the screen */
+        align-items: center;
+
+        margin-top: 5%;
+        /* border: 3px dashed pink; */
+        padding: 10px;
+        max-width:var(--box-centered-flex-max-width);
+      }
+
+        #box-profile-picture {
+          /* position: relative; */
+          /* top: 0; */
+          display:grid;
+          grid-template-columns: auto auto auto;
+          /* place-content: start space-evenly; */
+          /* align-content: start;  /* vertical */
+          justify-content: space-between; /* horizontal */
+          /* row-gap: 10px; */
+          background-color: transparent;
+          /* border: 5px dashed blue; */
+          width: 60%;
+          padding: 1%;
+        }
+
+            .grid-cell {
+              display:grid;
+              place-items:center;
+              place-content: top;
+              /* border: 2px dashed #111; */
+            }
+            .upper {
+              align-content: end; /* vertical */
+              max-height: 5px;
+            }
+
+            .top {
+              align-content: center; /* vertical */
+              justify-content: top; /* horizontal */
+              max-height: 5px;
+            }
+
+            .middle {
+              max-height: 5px;
+            }
+
+            .bottom {
+              align-content: center; /* vertical */
+              max-height: 5px;
+            }
+
+            .right {
+              justify-content: start; /* horizontal */
+              max-width: 5px;
+            }
+
+            .left {
+              justify-content: end; /* horizontal */
+              max-width: 5px;
+            }
+
+            .center {
+              align-content: center; /* vertical */
+              justify-content: center; /* horizontal */
+              max-width: 5px;
+            }
+
+            #top-center {
+              align-content: start;
+            }
+
+            #profile-picture img {
+              /* visibility: hidden; */
+              position: relative;
+              z-index: 2;
+              width: var(--profile-picture-width);
+              height: auto;
+              border-radius: 50%;
+              margin-bottom: 10%;
+              outline: thin dashed var(--gold-dark-hex);
+            }
+            #box-warp-drive {
+              /* visibility:hidden; */
+              position: absolute;
+              z-index: 1;
+              display: flex;
+              justify-content: center; /* Centers horizontally */
+              align-items: center;    /* Centers vertically (optional) */
+              background-color: transparent;
+              height: 1vh;
+              width: 1vw;
+              /* border: 2px dashed orange; */
+            }
+
+        #box-profile-text {
+          /* visibility: hidden; */
+          z-index: 2;
+          max-width: 90%;
+          height: auto;
+        }
+
+        .navbar {
+          z-index:2;
+          margin-top:1%;
+          max-height: var(--navbar-max-height);
+          overflow-y: auto;
+        }
+        .nav-item {
+          margin: 1%;
+        }
+        a.nav-link:link, a.nav-link:visited {
+          margin: 1%;
+          width: 20vw;
+          border: 2px solid var(--nav-link-standard-border-color);
+          border-radius: 10px;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          background-color: var(--nav-link-standard-bg-color);
+        }
+        a.nav-link:hover, a.nav-link.active {
+          font-family: "beyno";
+          background-color: var(--nav-link-active-bg-color);
+          border: 2px solid var(--nav-link-active-border-color);
+        }
+
+            #profile-name {
+              /* visibility:hidden; */
+              position: relative;
+            }
+            #profile-description {
+              /* visibility:hidden; */
+              position: relative;
+            }
+
+            .btn {
+              margin: 2vh;
+              font-family: "beyno";
+            }
+}

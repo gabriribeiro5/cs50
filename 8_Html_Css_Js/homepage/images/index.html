@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1link</title>
+    <link rel="stylesheet" href="./www/styles.css" />
+    <link rel="stylesheet" href="./www/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.min.js"></script>
+  </head>
+  <header>
+    <div class="header">
+    </div>
+  </header>
+  <body>
+    <div class="profile-wrapper">
+      <div class="profile-picture">
+        <img src="./images/profile_picture.png" alt="Profile Picture" />
+      </div>
+      <h1 class="profile-name">Gabriel R. Emegildio</h1>
+    </div>
+    <div class="contact-urls">
+      <a href="https://www.linkedin.com/in/gabriribeiro/" class="contact-url">LinkedIn</a>
+      <a href="https://github.com/gabriribeiro5" class="contact-url"> GitHub</a>
+      <a href="https://www.instagram.com/ogabrieo/" class="contact-url">Instagram</a>
+      <a href="https://github.com/gabriribeiro5" class="contact-url">Codigo dessa página</a>
+    </div>
+    <div id="my-qrcode"></div>
+    <script>
+      jQuery('#my-qrcode').qrcode({
+        text	: "http://gabriel.profile.s3-website-sa-east-1.amazonaws.com"
+      });
+    </script>
+  </body>
+  <footer class="footer">
+    <div class="content">
+      <div class="content__container">
+        <ul class="content__container__list">
+          <li class="content__container__list__item">Bada bin</li>
+          <li class="content__container__list__item">Bada bun</li>
+          <li class="content__container__list__item">Bada bin</li>
+          <li class="content__container__list__item">Bada bun</li>
+        </ul>
+      </div>
+  </footer>
+</html>

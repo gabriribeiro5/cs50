@@ -1,0 +1,212 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+@import 'https://fonts.cdnfonts.com/css/beyno';
+
+
+* {
+  box-sizing: border-box; /* make width = width + padding + border */
+  font-family: 'Roboto Mono', monospace; /* primary and secondary fonts */
+}
+
+@media only screen and (orientation:landscape) {
+  :root {
+    /* SIZES */
+    --body-min-height: 100%;
+
+    --col-navbar-min-width: 50vw;
+
+    --col-center-max-height: 80vh;
+    --col-center-min-width: 50vw;
+
+    /* COLOR PALLETS - Black Panther */
+    /* Title SOLID colors */
+    --blue-darkest-hex: #0A172E; /* Maastricht Blue */
+    --blue-dark-hex: #134284; /* Dark Cerulean */
+    --blue-light-hex: #0D66C4; /* Denim */
+    --blue-lightest-hex: #1984F0; /* Dodger Blue */
+    --gold-light-hex: #FFCA36; /* sunglow */
+    --gold-dark-hex: #D69300; /* harvest gold */
+    /* Vibranium SOLID colors */
+    --purple-light-hex: #C4A8FF; /* pale violet */
+    --purple-medium-hex: #664EAE; /* plump purple */
+    --purple-dark-hex: #1A0554; /* russian violet */
+    --black-rich-hex: #0C0B13; /* rich black */
+    /* Title TRANSPARENT colors */
+    --blue-darkest-rgba: rgba(10, 23, 46, 0.3); /* Maastricht Blue - rgba fourth number is transparency */
+    --blue-dark-rgba: rgba(19, 66, 132, 0.3); /* Dark Cerulean - rgba fourth number is transparency */
+    --blue-light-rgba: rgba(13, 102, 196, 0.3); /* Denim - rgba fourth number is transparency */
+    --blue-lightest-rgba: rgba(25, 132, 240, 0.3); /* Dodger Blue - rgba fourth number is transparency */
+    --gold-light-rgba: rgba(255, 202, 54, 0.3); /* sunglow - rgba fourth number is transparency */
+    --gold-dark-rgba: rgba(214, 147, 0, 0.3); /* harvest gold - rgba fourth number is transparency */
+    /* Vibranium TRANSPARENT colors */
+    --purple-light-rgba: rgba(196, 168, 255, 0.3); /* pale violet - rgba fourth number is transparency */
+    --purple-medium-rgba: rgba(102, 78, 174, 0.3); /* plump purple - rgba fourth number is transparency */
+    --purple-dark-rgba: rgba(26, 5, 84, 0.7); /* russian violet - rgba fourth number is transparency */
+    --black-rich-rgba: rgba(12, 11, 19, 0.1); /* rich black - rgba fourth number is transparency */
+
+
+    /* ITEM COLORS */
+    --space-fabric-bg-color: var(--black-rich-rgba);
+
+    --navbar-bg-color: var(--purple-dark-rgba);
+    --navbar-border-color: var(--gold-dark-hex);
+
+    --navbar-brand-bg-color: var(--navbar-bg-color);
+    --navbar-brand-border-color: var(--navbar-bg-color);
+
+    --nav-link-standard-bg-color: var(--navbar-bg-color);
+    --nav-link-standard-border-color: var(--gold-dark-hex);
+
+    --nav-link-active-bg-color: var(--gold-dark-hex);
+    --nav-link-active-border-color: var(--gold-light-hex);
+
+    --col-center-bg-color: var(--navbar-bg-color);
+    --col-center-border-color: var(--navbar-border-color);
+
+    --col-center-link-standard-font-color: var(--purple-medium-hex);
+    --col-center-link-hover-font-color: var(--purple-light-hex);
+
+  }
+
+  html, body {
+    height: var(--body-min-height); /* 100% of viewport height */
+    overflow-x: hidden; /* Hides any horizontal overflow */
+    overflow-y: hidden; /* Hides any vertical overflow */
+    /* border: 5px solid red; */
+  }
+  body {
+    background-image: url("../../images/purple_galaxy.jpg");
+    background-size: cover;
+    position: relative;
+  }
+
+  #box-space-fabric {
+    height: var(--body-min-height);
+    background-color: var(--space-fabric-bg-color);
+    display: grid;
+    /* place-items: center; */
+    place-content: start space-evenly;
+    /* border: 5px dotted; */
+  }
+  #col-navbar {
+    min-width: var(--col-navbar-min-width);
+  }
+  #main-navbar {
+    z-index:2;
+    margin-top:1%;
+    border-left: 7px;
+    border-right: 7px;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-color: var(--navbar-border-color);
+    border-style: dashed double dashed double;
+    border-radius: 10px;
+    background-color: var(--navbar-bg-color);
+  }
+  .nav-item {
+    margin: 1%;
+  }
+  img.rounded-pill {
+    outline: 2px solid var(--nav-link-standard-border-color);
+    padding: 2px;
+  }
+  a.nav-link:link, a.nav-link:visited {
+    background-color: var(--nav-link-standard-bg-color);
+    color: black;
+    border: 2px solid var(--nav-link-standard-border-color);
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  a.nav-link:hover, a.nav-link.active {
+    font-family: "beyno";
+    background-color: var(--nav-link-active-bg-color);
+    border: 2px solid var(--nav-link-active-border-color);
+  }
+
+  /* #row-warp-effect {
+    margin: 1%;
+  } */
+  #box-warp-drive {
+    /* visibility:hidden; */
+    /* z-index: 1; */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically (optional) */
+    background-color: transparent;
+    height: 1vh;
+    width: 1vw;
+    /* border: 2px dashed orange; */
+  }
+
+  .col {
+    margin: 1%;
+  }
+  .pallet {
+    margin-bottom: 5%;
+    font-family: "beyno";
+  }
+
+  #col-center {
+    position: relative;
+    overflow-y: auto;
+    padding: 2%;
+    border-left: 7px;
+    border-right: 7px;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-style: dashed double dashed double;
+    border-radius: 10px;
+    border-color: var(--col-center-border-color);
+    background-color: var(--col-center-bg-color);
+    max-height: var(--col-center-max-height);
+    min-width: var(--col-center-min-width);
+  }
+  article, p {
+    text-align: center;
+  }
+  a.article:link {
+    color: var(--col-center-link-standard-font-color);
+  }
+  a.article:hover {
+    color: var(--col-center-link-hover-font-color);
+  }
+  a.professional-navbar {
+    margin: 5%;
+  }
+  p.professional {
+    text-align: left;
+  }
+  h2.professional {
+    color: var(--gold-light-hex);
+  }
+  h5.professional {
+    color: var(--gold-light-hex);
+  }
+  .professional.section0 {
+    padding: 4vh 2vw;
+    text-align: right;
+    background-color: var(--blue-darkest-rgba);
+  }
+  #section1 {
+    padding: 4vh 2vw;
+  }
+  #section2 {
+    padding: 4vh 2vw;
+    background-color: var(--blue-darkest-rgba);
+  }
+  #section3 {
+    padding: 4vh 2vw;
+  }
+  #section4 {
+    padding: 4vh 2vw;
+    background-color: var(--blue-darkest-rgba);
+  }
+  #section5 {
+    padding: 4vh 2vw;
+  }
+  .professional.section6 {
+    text-align: right;
+    background-color: var(--blue-darkest-rgba);
+  }
